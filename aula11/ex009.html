@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTRANGEIRO OU NÃO?</title>
+</head>
+<style>
+  body {
+    background-color: rgb(73, 72, 72);
+    text-align: center;
+  }
+  h1.titulo {
+    background: linear-gradient(45deg, blue, green, yellow, blue, green, yellow);
+    background-clip: text;
+    -webkit-background-clip: text; /*para navegadores crhome e safri*/
+    color: transparent;
+    font-size: 3em;
+    text-align: center;
+  }
+  h3 {
+    margin-top: auto;
+    margin-right: auto;
+    color:white;
+  }
+  div.mora {
+    color:white;
+  }
+  div.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  strong.a {
+    color: green;
+  }
+  strong.b {
+    color: red;
+  }
+</style>
+<body>
+    <h1 class="titulo">Você é estrangeiro ou Brasileiro?</h1>
+    <h3>Você mora em qual país?(responda somente um país)</h3>
+    <div class="center">
+    <input type="text" class="br">
+    <input type="button" value="vereficar" onclick="vereficar()" >
+    </div>
+    <div class="mora"></div>
+    <script>
+      function vereficar() {
+        var bra = window.document.querySelector('input.br')
+        var br = (bra.value)
+        var morar = window.document.querySelector('div.mora')
+        morar.innerHTML = `<p>Você mora no <strong> ${br}</strong></p>`
+        if (br == 'Brasil') {
+          morar.innerHTML += 'Você é <strong class="a">brasileiro!</strong>'
+        } else {
+          morar.innerHTML += 'Você é <strong class="b">estrangeiro!</strong>'
+        }
+      }
+    </script>
+</body>
+</html>
